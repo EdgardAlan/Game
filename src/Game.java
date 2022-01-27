@@ -1,4 +1,4 @@
-import packages.Player;
+import packages.*;
 import java.awt.*;
 import javax.swing.JFrame;
 
@@ -6,6 +6,13 @@ public class Game extends Canvas implements Runnable{
     public static int WIDTH = 480, HEIGHT = 480;
     public Game(){
         this.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+    }
+
+    public void tick(){
+
+    }
+    public void render(){
+
     }
 
     public static void main(String[] args) throws Exception {
@@ -24,7 +31,13 @@ public class Game extends Canvas implements Runnable{
     @Override
     public void run() {
         while(true){
-            System.out.println("Running!");
+            tick();
+            render();
+            try {
+                Thread.sleep(1000/60);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
