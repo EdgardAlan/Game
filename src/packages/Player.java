@@ -1,5 +1,30 @@
 package packages;
+import java.awt.*;
 
-public class Player {
+public class Player extends Rectangle {
+    public int spd = 8;
+    public boolean right,up,down,left;
+
+    public Player(int x, int y){
+        super(x,y,32,32);
+    }
+
+    public void tick(){
+        if(right){
+            x+=spd;
+        }else if(left){
+            x-=spd;
+        }
+
+        if(up){
+            y-=spd;
+        }else if(down){
+            y+=spd;
+        }
+    }
+    
+    public void render(Graphics g){
+        g.setColor(Color.WHITE);
+    }
 
 }
