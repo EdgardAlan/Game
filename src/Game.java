@@ -1,4 +1,4 @@
-import packages.*;
+import packages.Player;
 import java.awt.*;
 import javax.swing.JFrame;
 
@@ -17,11 +17,14 @@ public class Game extends Canvas implements Runnable{
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+
+        new Thread(game).start();
     }
 
     @Override
     public void run() {
-        // TODO Auto-generated method stub
-        
+        while(true){
+            System.out.println("Running!");
+        }
     }
 }
